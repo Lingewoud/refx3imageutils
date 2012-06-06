@@ -182,7 +182,7 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     // Get image width, height. We'll use the entire image.
     int myImageWidth  = CGImageGetWidth(cgImageRotated);
     int myImageHeight = CGImageGetHeight(cgImageRotated);
-    NSLog(@"rotated sizes, w:%d, h:%d",myImageWidth, myImageHeight);
+    if(_verbosity) NSLog(@"rotated sizes, w:%d, h:%d",myImageWidth, myImageHeight);
     NSNumber *newRow = 0;
     
     const UInt32 *pixels = (const UInt32*)CFDataGetBytePtr(imageData);
@@ -211,7 +211,7 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     NSSortDescriptor *highestToLowest = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
     [notAlphaCols sortUsingDescriptors:[NSArray arrayWithObject:highestToLowest]];
     
-    NSLog(@"notAlphaCols %@", notAlphaCols);
+     NSLog(@"notAlphaCols %@", notAlphaCols);
 
     
 }
@@ -269,7 +269,7 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     // Get image width, height. We'll use the entire image.
     int myImageWidth  = CGImageGetWidth(cgImageRotated);
     int myImageHeight = CGImageGetHeight(cgImageRotated);
-    NSLog(@"rotated sizes, w:%d, h:%d",myImageWidth, myImageHeight);
+     if(_verbosity) NSLog(@"rotated sizes, w:%d, h:%d",myImageWidth, myImageHeight);
     //NSNumber *currentRow = 0;
     NSNumber *newRow = 0;
     
@@ -286,12 +286,12 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
             [notAlphaCols addObject:newRow];
             //if(currentRow < newRow) [notAlphaRows addObject:currentRow];
             //break;
-            NSLog(@"this is NOT a transparent pixel:%i %@",j,newRow);
+             if(_verbosity) NSLog(@"this is NOT a transparent pixel:%i %@",j,newRow);
             
         }
         else
         {            
-            NSLog(@"transparent pixel!%i %@",j,newRow);                        
+             if(_verbosity) NSLog(@"transparent pixel!%i %@",j,newRow);                        
         }
         
         //currentRow = newRow;        
@@ -303,7 +303,7 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     NSSortDescriptor *highestToLowest = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
     [notAlphaCols sortUsingDescriptors:[NSArray arrayWithObject:highestToLowest]];
     
-    NSLog(@"notAlphaCols %@", notAlphaCols);
+     NSLog(@"notAlphaCols %@", notAlphaCols);
     
     
 }
@@ -314,7 +314,7 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     CGImageDestinationAddImage(destination, image, nil);
     
     if (!CGImageDestinationFinalize(destination)) {
-        NSLog(@"Failed to write image to %@", path);
+         if(_verbosity) NSLog(@"Failed to write image to %@", path);
     }
     CFRelease(destination);
 }
@@ -346,7 +346,7 @@ CFRelease(image);
     // Get image width, height. We'll use the entire image.
     int myImageWidth  = CGImageGetWidth(myImage);
     int myImageHeight = CGImageGetHeight(myImage);
-    NSLog(@"sizes, w:%d, h:%d",myImageWidth, myImageHeight);
+     if(_verbosity) NSLog(@"sizes, w:%d, h:%d",myImageWidth, myImageHeight);
 
     //NSNumber *currentRow = 0;
     NSNumber *newRow = 0;
@@ -382,7 +382,7 @@ CFRelease(image);
     NSSortDescriptor *highestToLowest = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
     [notAlphaRows sortUsingDescriptors:[NSArray arrayWithObject:highestToLowest]];
 
-    NSLog(@"nonAlphaRows %@", notAlphaRows);
+     NSLog(@"nonAlphaRows %@", notAlphaRows);
 }
 
 /*
@@ -426,7 +426,7 @@ CFRelease(image);
     CGRect origRect = CGRectMake(0,0,myImageWidth,myImageHeight);
     CGRect outBox = origRect;
     
-    NSLog(@"old height:%f",outBox.size.height);
+    if(_verbosity) NSLog(@"old height:%f",outBox.size.height);
     
     float theCol;
     
@@ -438,21 +438,20 @@ CFRelease(image);
             theCol = [self alphaInImage:myImage AtPixel:CGPointMake( x, y )];
             if( theCol > 0.01 )
             {
-                NSLog(@"Breaking:1");
+                 if(_verbosity) NSLog(@"Breaking:1");
                 
                 break;
             }
         }
         if( theCol > 0.01 ) {
-            NSLog(@"Breaking:2");
+             if(_verbosity) NSLog(@"Breaking:2");
             break;
         }
         
         outBox.origin.y += 1;
         outBox.size.height -= 1;
     }      
-    
-    NSLog(@"new height:%f",outBox.size.height);
+     if(_verbosity) NSLog(@"new height:%f",outBox.size.height);
     
     
     //  fail if no image file
@@ -471,7 +470,7 @@ CFRelease(image);
     
     // Cancel if point is outside image coordinates
     if (!CGRectContainsPoint(CGRectMake(0.0f, 0.0f, myImageWidth, myImageHeight), point)) {
-        NSLog(@"out of bounds:");
+         if(_verbosity) NSLog(@"out of bounds:");
         return 1.0;
     }
     
