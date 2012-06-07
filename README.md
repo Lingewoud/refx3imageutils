@@ -9,7 +9,7 @@ Utilities:
 
 **trimalpha**
 
-trimalpha tsrips all transparant margins from an image. Replaces the ImageMagick command:
+trimalpha strips all transparant margins from an image. Replaces the ImageMagick command:
 
 `./convert -alpha Set -background transparent  -trim <source file> <destination file>`
 	
