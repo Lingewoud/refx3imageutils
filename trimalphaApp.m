@@ -133,11 +133,18 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
             return EX_NOINPUT;
         }
         
-        //[self detectAlpha1];
-        [self detectAlphaTopBottom];
-        [self detectAlphaLeftRight];
+        //THE DETECTING AND CROPPING MAGIC
+        CGImageRef myImage = [self MyCreateCGImageFromFile:_in];
+        NSArray* vertOffsets = [NSArray arrayWithArray:[self detectAlphaTopBottom]];
+        NSArray* horOffsets = [NSArray arrayWithArray:[self detectAlphaLeftRight]];
 
-            
+
+        CGRect croppingRect = CGRectMake([[horOffsets objectAtIndex:0] floatValue], 
+                                         [[vertOffsets objectAtIndex:0] floatValue], 
+                                         [[horOffsets objectAtIndex:1] floatValue], 
+                                         [[vertOffsets objectAtIndex:1] floatValue]);
+      
+        [self cropImage:myImage withRect:croppingRect saveTo:_out];
     
     }
     else {
@@ -152,11 +159,61 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     return EXIT_SUCCESS;
 }
 
--(void) detectAlphaLeftRight {
-    
+-(NSArray*) detectAlphaTopBottom {
     //try opening input image
-    CGImageRef image = [self MyCreateCGImageFromFile:_in];
+    CGImageRef myImage = [self MyCreateCGImageFromFile:_in];
+    CFDataRef imageData = CGDataProviderCopyData(CGImageGetDataProvider(myImage)); 
+    // Get image width, height. We'll use the entire image.
+    int myImageWidth  = CGImageGetWidth(myImage);
+    int myImageHeight = CGImageGetHeight(myImage);
+    if(_verbosity) NSLog(@"sizes, w:%d, h:%d",myImageWidth, myImageHeight);
     
+    NSNumber *newRow = 0;
+    
+    const UInt32 *pixels = (const UInt32*)CFDataGetBytePtr(imageData);
+    
+    NSMutableArray *notAlphaRows = [NSMutableArray array];
+    
+    for (int j = 0; j < (myImageHeight * myImageWidth); j++)
+    {   
+        newRow = [NSNumber numberWithInt: j/myImageWidth];
+        if (pixels[j] & 0xff000000)
+        {
+            [notAlphaRows addObject:newRow];
+            
+            if(_verbosity) NSLog(@"this is NOT a transparent pixel");
+            
+        }
+        else
+        {            
+            if(_verbosity) NSLog(@"transparent pixel!");                        
+        }
+    }
+    
+    NSSet *_tmpSet = [[NSSet alloc] initWithArray: notAlphaRows];
+    notAlphaRows = [[_tmpSet allObjects] mutableCopy];
+    
+    NSSortDescriptor *highestToLowest = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
+    [notAlphaRows sortUsingDescriptors:[NSArray arrayWithObject:highestToLowest]];
+    
+    NSMutableArray *verticalRectVals = [NSMutableArray array];
+    
+    int topOffset = [[notAlphaRows objectAtIndex:0] intValue];
+    
+    int bottomOffset = myImageHeight - [[notAlphaRows lastObject] intValue] - 1;
+    int height = myImageHeight - topOffset - bottomOffset; 
+    
+    [verticalRectVals addObject:[NSNumber numberWithInt:topOffset]];
+    [verticalRectVals addObject:[NSNumber numberWithInt:height]];
+    if(_verbosity) NSLog(@"nonAlphaRows %@", notAlphaRows);
+    if(_verbosity) NSLog(@"verticalRectVals %@", verticalRectVals);
+    
+    return verticalRectVals;
+}
+
+
+-(NSArray*) detectAlphaLeftRight {
+    CGImageRef image = [self MyCreateCGImageFromFile:_in];
     CGRect imageRect = CGRectMake(0, 0, CGImageGetWidth(image), CGImageGetHeight(image));//draw at origin; translation will take care of movement
     
     NSUInteger width = CGImageGetWidth(image);
@@ -165,42 +222,47 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     CGFloat targetHeight = width;
     
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef context = CGBitmapContextCreate(NULL,
+                                                 targetWidth,
+                                                 targetHeight, 
+                                                 CGImageGetBitsPerComponent(image), 
+                                                 CGImageGetBytesPerRow(image), 
+                                                 colorSpace, 
+                                                 kCGImageAlphaPremultipliedLast);
     
-
-    CGContextRef context = CGBitmapContextCreate(NULL,targetWidth,targetHeight, CGImageGetBitsPerComponent(image), CGImageGetBytesPerRow(image), colorSpace, kCGImageAlphaPremultipliedLast);
-
-    CGContextRotateCTM(context, DegreesToRadians(90));
-    CGContextTranslateCTM(context,0, -targetWidth);
-   
-    CGContextDrawImage(context, imageRect, image);//draw the bitmap (image) to the context in the specified rectangle
-    //CGContextSaveGState(context);
+    CGContextRotateCTM(context, DegreesToRadians(-90));
+    CGContextTranslateCTM(context,-targetHeight, 0);
+    CGContextDrawImage(context, imageRect, image);
 
     CFRelease(image);
     
     CGImageRef cgImageRotated = CGBitmapContextCreateImage(context);    
-    
-    [self CGImageWriteToFile:cgImageRotated withPath:@"/Users/pim/Desktop/testrotated.png"];
-
-    CFDataRef imageData = CGDataProviderCopyData(CGImageGetDataProvider(cgImageRotated)); 
+    //FIXME SAVE STEP BETWEEN IS NEEDED BUT WHY?
+    [self CGImageWriteToFile:cgImageRotated withPath:@"/tmp/p3trimalpharotated.png"];
+    CGImageRef cgImageRotated2 = [self MyCreateCGImageFromFile:@"/tmp/p3trimalpharotated.png"];
+    //CFDataRef imageData = CGDataProviderCopyData(CGImageGetDataProvider(cgImageRotated)); 
+    CFDataRef imageData = CGDataProviderCopyData(CGImageGetDataProvider(cgImageRotated2)); 
     
     // Get image width, height. We'll use the entire image.
-    int myImageWidth  = CGImageGetWidth(cgImageRotated);
-    int myImageHeight = CGImageGetHeight(cgImageRotated);
-    if(_verbosity) NSLog(@"rotated sizes, w:%d, h:%d",myImageWidth, myImageHeight);
+    int myImageWidth  = CGImageGetWidth(cgImageRotated2);
+    int myImageHeight = CGImageGetHeight(cgImageRotated2);
+    
+    NSLog(@"rotated sizes, w:%d, h:%d",myImageWidth, myImageHeight);
+    
     NSNumber *newRow = 0;
     
-    const UInt32 *pixels = (const UInt32*)CFDataGetBytePtr(imageData);
+    const UInt32 *pixels2 = (const UInt32*)CFDataGetBytePtr(imageData);
     
     NSMutableArray *notAlphaCols = [NSMutableArray array];
     
     for (int j = 0; j < (myImageHeight * myImageWidth); j++)
     {   
         newRow = [NSNumber numberWithInt: j/myImageWidth];
-        if (pixels[j] & 0xff000000)
+        if (pixels2[j] & 0xff000000)
         {
             [notAlphaCols addObject:newRow];
 
-             if(_verbosity) NSLog(@"this is NOT a transparent pixel:%i %@",j,newRow);
+            if(_verbosity) NSLog(@"this is NOT a transparent pixel:%i %@",j,newRow);
             
         }
         else
@@ -215,9 +277,27 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     NSSortDescriptor *highestToLowest = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
     [notAlphaCols sortUsingDescriptors:[NSArray arrayWithObject:highestToLowest]];
     
-     NSLog(@"notAlphaCols %@", notAlphaCols);
+    NSMutableArray *horizontalRectVals = [NSMutableArray array];
     
+    int topOffset = [[notAlphaCols objectAtIndex:0] intValue];
     
+    int bottomOffset = myImageHeight - [[notAlphaCols lastObject] intValue] - 1;
+    int newheight = width - topOffset - bottomOffset; 
+
+    
+    [horizontalRectVals addObject:[NSNumber numberWithInt:topOffset]];
+    [horizontalRectVals addObject:[NSNumber numberWithInt:newheight]];
+    if(_verbosity) NSLog(@"nonAlphaCols %@", notAlphaCols);    
+    NSLog(@"horizontalRectVals %@", horizontalRectVals);
+    
+    return horizontalRectVals;
+}
+
+-(void) cropImage:(CGImageRef)image withRect:(CGRect)cropRect saveTo:(NSString*)path{
+    
+    CGImageRef cgImageCropped = CGImageCreateWithImageInRect(image, cropRect);
+
+    [self CGImageWriteToFile:cgImageCropped withPath:path];
 }
 
 -(void) CGImageWriteToFile: (CGImageRef) image withPath:(NSString *) path {
@@ -226,50 +306,11 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     CGImageDestinationAddImage(destination, image, nil);
     
     if (!CGImageDestinationFinalize(destination)) {
-         if(_verbosity) NSLog(@"Failed to write image to %@", path);
+        if(_verbosity) NSLog(@"Failed to write image to %@", path);
     }
     CFRelease(destination);
 }
 
--(void) detectAlphaTopBottom {
-    //try opening input image
-    CGImageRef myImage = [self MyCreateCGImageFromFile:_in];
-    CFDataRef imageData = CGDataProviderCopyData(CGImageGetDataProvider(myImage)); 
-    // Get image width, height. We'll use the entire image.
-    int myImageWidth  = CGImageGetWidth(myImage);
-    int myImageHeight = CGImageGetHeight(myImage);
-     if(_verbosity) NSLog(@"sizes, w:%d, h:%d",myImageWidth, myImageHeight);
-
-    NSNumber *newRow = 0;
-    
-    const UInt32 *pixels = (const UInt32*)CFDataGetBytePtr(imageData);
-
-    NSMutableArray *notAlphaRows = [NSMutableArray array];
-    
-    for (int j = 0; j < (myImageHeight * myImageWidth); j++)
-    {   
-        newRow = [NSNumber numberWithInt: j/myImageWidth];
-        if (pixels[j] & 0xff000000)
-        {
-            [notAlphaRows addObject:newRow];
-
-           if(_verbosity) NSLog(@"this is NOT a transparent pixel");
-            
-        }
-        else
-        {            
-            if(_verbosity) NSLog(@"transparent pixel!");                        
-        }
-    }
-    
-    NSSet *_tmpSet = [[NSSet alloc] initWithArray: notAlphaRows];
-    notAlphaRows = [[_tmpSet allObjects] mutableCopy];
-    
-    NSSortDescriptor *highestToLowest = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
-    [notAlphaRows sortUsingDescriptors:[NSArray arrayWithObject:highestToLowest]];
-
-     NSLog(@"nonAlphaRows %@", notAlphaRows);
-}
 
 
 @end
