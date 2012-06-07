@@ -75,7 +75,6 @@
 		55CCE92E0C137F7D00FA06C6 /* libddcli.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libddcli.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CCEA860C138BE900FA06C6 /* DDGetoptLongParser.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DDGetoptLongParser.h; sourceTree = "<group>"; };
 		55CCEB150C13963F00FA06C6 /* versions.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = versions.xcconfig; sourceTree = "<group>"; };
-		C6859EA3029092ED04C91782 /* ddcli.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ddcli.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +104,6 @@
 			children = (
 				55CCE4680C11C58F00FA06C6 /* lib */,
 				08FB7795FE84155DC02AAC07 /* Source */,
-				C6859EA2029092E104C91782 /* Documentation */,
 				08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
 				55CCEB150C13963F00FA06C6 /* versions.xcconfig */,
@@ -165,14 +163,6 @@
 				55200F520C4A27FD00018A42 /* DDCliParseException.m */,
 			);
 			path = lib;
-			sourceTree = "<group>";
-		};
-		C6859EA2029092E104C91782 /* Documentation */ = {
-			isa = PBXGroup;
-			children = (
-				C6859EA3029092ED04C91782 /* ddcli.1 */,
-			);
-			name = Documentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
