@@ -12,17 +12,27 @@
 		<key>ddcli.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>p3iscale.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
 		<key>trimalpha.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>3E98B3A3157FA3D6005C56AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3EF2AE2915829D0400CD035F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

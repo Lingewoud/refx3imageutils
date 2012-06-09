@@ -27,6 +27,13 @@
 		3E98B3B5157FA3F7005C56AB /* trimalphaApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E98B3A0157FA2E1005C56AB /* trimalphaApp.m */; };
 		3E98B3C2157FB5A0005C56AB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E98B3C1157FB5A0005C56AB /* QuartzCore.framework */; };
 		3E98B3CA157FBBC2005C56AB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E98B3C9157FBBC2005C56AB /* Cocoa.framework */; };
+		3EF2AE3015829D0400CD035F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E98B3C9157FBBC2005C56AB /* Cocoa.framework */; };
+		3EF2AE3115829D0400CD035F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E98B3C1157FB5A0005C56AB /* QuartzCore.framework */; };
+		3EF2AE3215829D0400CD035F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
+		3EF2AE3315829D0400CD035F /* libddcli.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CCE92E0C137F7D00FA06C6 /* libddcli.a */; };
+		3EF2AE3915829D2600CD035F /* p3iscale.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF2AE25158299FB00CD035F /* p3iscale.m */; };
+		3EF2AE3A15829D2800CD035F /* p3iscaleApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF2AE21158299B300CD035F /* p3iscaleApp.m */; };
+		3EF2AE3B15829DDA00CD035F /* p3imglib.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF2AE2715829A7000CD035F /* p3imglib.m */; };
 		55200F530C4A27FD00018A42 /* DDCliParseException.h in Headers */ = {isa = PBXBuildFile; fileRef = 55200F510C4A27FD00018A42 /* DDCliParseException.h */; };
 		55200F540C4A27FD00018A42 /* DDCliParseException.m in Sources */ = {isa = PBXBuildFile; fileRef = 55200F520C4A27FD00018A42 /* DDCliParseException.m */; };
 		55CCE9310C137F8E00FA06C6 /* DDCommandLineInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 55CCE46D0C11C58F00FA06C6 /* DDCommandLineInterface.h */; };
@@ -53,6 +60,13 @@
 			remoteGlobalIDString = 3E98B3A3157FA3D6005C56AB;
 			remoteInfo = trimalpha;
 		};
+		3EF2AE2B15829D0400CD035F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55CCE92D0C137F7D00FA06C6;
+			remoteInfo = ddcli;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +78,12 @@
 		3E98B3B2157FA3D6005C56AB /* trimalpha */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = trimalpha; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E98B3C1157FB5A0005C56AB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3E98B3C9157FBBC2005C56AB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		3EF2AE20158299B300CD035F /* p3iscaleApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = p3iscaleApp.h; sourceTree = "<group>"; };
+		3EF2AE21158299B300CD035F /* p3iscaleApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = p3iscaleApp.m; sourceTree = "<group>"; };
+		3EF2AE25158299FB00CD035F /* p3iscale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = p3iscale.m; sourceTree = "<group>"; };
+		3EF2AE2615829A7000CD035F /* p3imglib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = p3imglib.h; sourceTree = "<group>"; };
+		3EF2AE2715829A7000CD035F /* p3imglib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = p3imglib.m; sourceTree = "<group>"; };
+		3EF2AE3715829D0400CD035F /* p3iscale */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = p3iscale; sourceTree = BUILT_PRODUCTS_DIR; };
 		55200F510C4A27FD00018A42 /* DDCliParseException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCliParseException.h; sourceTree = "<group>"; };
 		55200F520C4A27FD00018A42 /* DDCliParseException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCliParseException.m; sourceTree = "<group>"; };
 		55CCE4690C11C58F00FA06C6 /* DDCliApplication.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DDCliApplication.h; sourceTree = "<group>"; };
@@ -89,6 +109,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3EF2AE2F15829D0400CD035F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EF2AE3015829D0400CD035F /* Cocoa.framework in Frameworks */,
+				3EF2AE3115829D0400CD035F /* QuartzCore.framework in Frameworks */,
+				3EF2AE3215829D0400CD035F /* Foundation.framework in Frameworks */,
+				3EF2AE3315829D0400CD035F /* libddcli.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		55CCE92C0C137F7D00FA06C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -102,7 +133,8 @@
 		08FB7794FE84155DC02AAC07 /* ddcli */ = {
 			isa = PBXGroup;
 			children = (
-				55CCE4680C11C58F00FA06C6 /* lib */,
+				3EF2AE2815829A7600CD035F /* p3imglib */,
+				55CCE4680C11C58F00FA06C6 /* libDDCLI */,
 				08FB7795FE84155DC02AAC07 /* Source */,
 				08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
@@ -114,8 +146,9 @@
 		08FB7795FE84155DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				32A70AAB03705E1F00C91783 /* PAS3 Image Utils_Prefix.pch */,
 				3E98B3A1157FA2E7005C56AB /* trimalphaApp */,
+				3EF2AE23158299BE00CD035F /* p3iscale */,
+				32A70AAB03705E1F00C91783 /* PAS3 Image Utils_Prefix.pch */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -135,6 +168,7 @@
 			children = (
 				55CCE92E0C137F7D00FA06C6 /* libddcli.a */,
 				3E98B3B2157FA3D6005C56AB /* trimalpha */,
+				3EF2AE3715829D0400CD035F /* p3iscale */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,7 +183,26 @@
 			name = trimalphaApp;
 			sourceTree = "<group>";
 		};
-		55CCE4680C11C58F00FA06C6 /* lib */ = {
+		3EF2AE23158299BE00CD035F /* p3iscale */ = {
+			isa = PBXGroup;
+			children = (
+				3EF2AE25158299FB00CD035F /* p3iscale.m */,
+				3EF2AE20158299B300CD035F /* p3iscaleApp.h */,
+				3EF2AE21158299B300CD035F /* p3iscaleApp.m */,
+			);
+			name = p3iscale;
+			sourceTree = "<group>";
+		};
+		3EF2AE2815829A7600CD035F /* p3imglib */ = {
+			isa = PBXGroup;
+			children = (
+				3EF2AE2615829A7000CD035F /* p3imglib.h */,
+				3EF2AE2715829A7000CD035F /* p3imglib.m */,
+			);
+			name = p3imglib;
+			sourceTree = "<group>";
+		};
+		55CCE4680C11C58F00FA06C6 /* libDDCLI */ = {
 			isa = PBXGroup;
 			children = (
 				55CCE46D0C11C58F00FA06C6 /* DDCommandLineInterface.h */,
@@ -162,6 +215,7 @@
 				55200F510C4A27FD00018A42 /* DDCliParseException.h */,
 				55200F520C4A27FD00018A42 /* DDCliParseException.m */,
 			);
+			name = libDDCLI;
 			path = lib;
 			sourceTree = "<group>";
 		};
@@ -199,6 +253,24 @@
 			productInstallPath = "$(HOME)/bin";
 			productName = ddcli;
 			productReference = 3E98B3B2157FA3D6005C56AB /* trimalpha */;
+			productType = "com.apple.product-type.tool";
+		};
+		3EF2AE2915829D0400CD035F /* p3iscale */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EF2AE3415829D0400CD035F /* Build configuration list for PBXNativeTarget "p3iscale" */;
+			buildPhases = (
+				3EF2AE2C15829D0400CD035F /* Sources */,
+				3EF2AE2F15829D0400CD035F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3EF2AE2A15829D0400CD035F /* PBXTargetDependency */,
+			);
+			name = p3iscale;
+			productInstallPath = "$(HOME)/bin";
+			productName = ddcli;
+			productReference = 3EF2AE3715829D0400CD035F /* p3iscale */;
 			productType = "com.apple.product-type.tool";
 		};
 		55CCE92D0C137F7D00FA06C6 /* ddcli */ = {
@@ -239,6 +311,7 @@
 			targets = (
 				55CCEA590C13887100FA06C6 /* All */,
 				3E98B3A3157FA3D6005C56AB /* trimalpha */,
+				3EF2AE2915829D0400CD035F /* p3iscale */,
 				55CCE92D0C137F7D00FA06C6 /* ddcli */,
 			);
 		};
@@ -251,6 +324,16 @@
 			files = (
 				3E98B3B4157FA3F5005C56AB /* trimalpha.m in Sources */,
 				3E98B3B5157FA3F7005C56AB /* trimalphaApp.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EF2AE2C15829D0400CD035F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EF2AE3915829D2600CD035F /* p3iscale.m in Sources */,
+				3EF2AE3A15829D2800CD035F /* p3iscaleApp.m in Sources */,
+				3EF2AE3B15829DDA00CD035F /* p3imglib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +360,11 @@
 			isa = PBXTargetDependency;
 			target = 3E98B3A3157FA3D6005C56AB /* trimalpha */;
 			targetProxy = 3E98B3B7157FA469005C56AB /* PBXContainerItemProxy */;
+		};
+		3EF2AE2A15829D0400CD035F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55CCE92D0C137F7D00FA06C6 /* ddcli */;
+			targetProxy = 3EF2AE2B15829D0400CD035F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -336,6 +424,39 @@
 				INSTALL_PATH = "$(HOME)/bin";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = trimalpha;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		3EF2AE3515829D0400CD035F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PAS3 Image Utils_Prefix.pch";
+				INSTALL_PATH = "$(HOME)/bin";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = p3iscale;
+				ZERO_LINK = NO;
+			};
+			name = Debug;
+		};
+		3EF2AE3615829D0400CD035F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PAS3 Image Utils_Prefix.pch";
+				INSTALL_PATH = "$(HOME)/bin";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = p3iscale;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -411,6 +532,15 @@
 			buildConfigurations = (
 				3E98B3B0157FA3D6005C56AB /* Debug */,
 				3E98B3B1157FA3D6005C56AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EF2AE3415829D0400CD035F /* Build configuration list for PBXNativeTarget "p3iscale" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EF2AE3515829D0400CD035F /* Debug */,
+				3EF2AE3615829D0400CD035F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

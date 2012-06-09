@@ -10,10 +10,8 @@
     BOOL _help;
 }
 
-
-- (CGImageRef) MyCreateCGImageFromFile: (NSString *) path;
-//-(void) CGImageWriteToFile: (CGImageRef) image :(NSString *) path;
--(void) CGImageWriteToFile: (CGImageRef) image withPath:(NSString *) path;
+//- (CGImageRef) MyCreateCGImageFromFile: (NSString *) path;
+//- (void) CGImageWriteToFile: (CGImageRef) image withPath:(NSString *) path;
 
 
 

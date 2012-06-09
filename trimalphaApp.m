@@ -64,8 +64,7 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     [optionsParser addOptionsFromTable: optionTable];
 }
 
-- (CGImageRef) MyCreateCGImageFromFile: (NSString *) path
-{
+- (CGImageRef) MyCreateCGImageFromFile: (NSString *) path {
     // Get the URL for the pathname passed to the function.
     NSURL             *url = [NSURL fileURLWithPath:path];
     CGImageRef        myImage = NULL;
