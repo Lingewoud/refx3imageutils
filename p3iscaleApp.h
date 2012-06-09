@@ -14,6 +14,8 @@
     NSString * _in;
     NSString * _out;
     int _verbosity;
+    int _width;
+    int _height;
     BOOL _version;
     BOOL _help;
 }

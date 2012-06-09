@@ -39,6 +39,8 @@
     printf("\n"
            "  -i, --in <FILENAME>           Input image filename to trim alpha from\n"
            "  -o, --out <FILENAME>          Output image filename\n"
+           "  -w, --width <INT>             New width in pixels \n"
+           "  -h, --height <INT>            New height in pixels \n"
            "  -v, --verbose                 Increase verbosity\n"
            "      --version                 Display version and exit\n"
            "  -h, --help                    Display this help and exit\n"
@@ -59,9 +61,11 @@
         // Long         Short   Argument options
         {@"in",        'i',    DDGetoptRequiredArgument},
         {@"out",       'o',    DDGetoptRequiredArgument},
-        {@"verbose",    'v',    DDGetoptNoArgument},
+        {@"height",    'h',    DDGetoptRequiredArgument},
+        {@"width",     'w',    DDGetoptRequiredArgument},
+        {@"verbose",   'v',    DDGetoptNoArgument},
         {@"version",    0,      DDGetoptNoArgument},
-        {@"help",       'h',    DDGetoptNoArgument},
+        //{@"help",       'h',    DDGetoptNoArgument},
         {nil,           0,      0},
     };
     [optionsParser addOptionsFromTable: optionTable];
@@ -81,7 +85,7 @@
         [self printVersion];
         return EXIT_SUCCESS;
     }
-    
+        NSLog(@"height:%@, width:%@",_height,_width);    
     if (_in && _out)
     {
         ddprintf(@"in: %@, out: %@, verbosity: %d\n", _in, _out, _verbosity);
@@ -93,6 +97,8 @@
             return EX_NOINPUT;
         }
                 
+        
+        NSLog(@"height:%@, width:%@",_height,_width);
         //THE SCALING MAGIC
         CGImageRef myImage = [p3imglib MyCreateCGImageFromFile:_in];
         
