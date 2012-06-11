@@ -61,33 +61,8 @@
     
     return myImage;
 }
-+(void) CGImageWriteToFile: (CGImageRef) image withPath:(NSString *) path {
-    CFURLRef url = (CFURLRef)[NSURL fileURLWithPath:path];
-    CGImageDestinationRef destination = CGImageDestinationCreateWithURL(url, kUTTypePNG, 1, NULL);
-    CGImageDestinationAddImage(destination, image, nil);
-    
-    if (!CGImageDestinationFinalize(destination)) {
-        NSLog(@"Failed to write image to %@", path);
-    }
-    CFRelease(destination);
-}
 
-/*
- +(CGImageRef) scaleImageKeepAscectRatio: (CGImageRef)image maxPixelWidth:(int)w maxPixelHeight:(int)h  {
-    NSUInteger orgWidth = CGImageGetWidth(image);
-    NSUInteger orgHeight = CGImageGetHeight(image);
-    float new_y= (orgHeight-h);
-
-    
-    CGRect croprect = CGRectMake(0,new_y,w,h);
-    
-        
-    CGImageRef sizedImage = [image imageByCroppingToRect:croprect];
-    return sizedImage;
-}
- */
-
-+ (CGImageRef)resizeCGImage:(CGImageRef)image toWidth:(int)width andHeight:(int)height {
++(CGImageRef)resizeCGImage:(CGImageRef)image toWidth:(int)width andHeight:(int)height {
 
     CGColorSpaceRef colorSpace = CGImageGetColorSpace(image);
 
@@ -112,39 +87,17 @@
     return imgRef;
 }
 
++(void) CGImageWriteToFile: (CGImageRef) image withPath:(NSString *) path {
+    CFURLRef url = (CFURLRef)[NSURL fileURLWithPath:path];
+    CGImageDestinationRef destination = CGImageDestinationCreateWithURL(url, kUTTypePNG, 1, NULL);
+    CGImageDestinationAddImage(destination, image, nil);
+    
+    if (!CGImageDestinationFinalize(destination)) {
+        NSLog(@"Failed to write image to %@", path);
+    }
+    CFRelease(destination);
+}
 
-/*+(CGImageRef) epsToPng:
-source,dest)
-image = OSX::NSImage.alloc.initWithContentsOfFile(source)
 
-if image.nil?
-p "error eps does not exist or could not be opened:"+source
-else
-image.writePNG(dest) 
-end
-end
-*/
-
-/*
- def cropBitmap105(source,dest,w,h)
- image = OSX::CIImage.alloc.initWithContentsOfURL(OSX::NSURL.fileURLWithPath(source))
- if image.nil?
- p "error eps does not exist or could not be opened:"+source
- else
- original_size = image.extent.size
- 
- new_y= (original_size.height-h)
- 
- croprect = OSX::CGRectMake(0,new_y,w,h)
- imageCropped = image.imageByCroppingToRect(croprect)
- 
- format = OSX::NSPNGFileType
- properties = nil
- 
- bitmapRep = OSX::NSBitmapImageRep.alloc.initWithCIImage(imageCropped)
- blob = bitmapRep.representationUsingType_properties(format, properties)
- blob.writeToFile_atomically(dest, false)
- end
- end*/
 
 @end

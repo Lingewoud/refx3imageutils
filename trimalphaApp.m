@@ -1,5 +1,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import "trimalphaApp.h"
+#import "p3imglib.h"
 
 CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;};
 CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
@@ -64,48 +65,6 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     [optionsParser addOptionsFromTable: optionTable];
 }
 
-- (CGImageRef) MyCreateCGImageFromFile: (NSString *) path {
-    // Get the URL for the pathname passed to the function.
-    NSURL             *url = [NSURL fileURLWithPath:path];
-    CGImageRef        myImage = NULL;
-    CGImageSourceRef  myImageSource;
-    CFDictionaryRef   myOptions = NULL;
-    CFStringRef       myKeys[2];
-    CFTypeRef         myValues[2];
-    
-    // Set up options if you want them. The options here are for
-    // caching the image in a decoded form and for using floating-point
-    // values if the image format supports them.
-    myKeys[0] = kCGImageSourceShouldCache;
-    myValues[0] = (CFTypeRef)kCFBooleanTrue;
-    myKeys[1] = kCGImageSourceShouldAllowFloat;
-    myValues[1] = (CFTypeRef)kCFBooleanTrue;
-    // Create the dictionary
-    myOptions = CFDictionaryCreate(NULL, (const void **) myKeys,
-                                   (const void **) myValues, 2,
-                                   &kCFTypeDictionaryKeyCallBacks,
-                                   & kCFTypeDictionaryValueCallBacks);
-    // Create an image source from the URL.
-    myImageSource = CGImageSourceCreateWithURL((CFURLRef)url, myOptions);
-    CFRelease(myOptions);
-    // Make sure the image source exists before continuing
-    if (myImageSource == NULL){
-        fprintf(stderr, "Image source is NULL.");
-        return  NULL;
-    }
-    // Create an image from the first item in the image source.
-    myImage = CGImageSourceCreateImageAtIndex(myImageSource, 0, NULL);
-    
-    CFRelease(myImageSource);
-    // Make sure the image exists before continuing
-    if (myImage == NULL){
-        fprintf(stderr, "Image not created from image source.");
-        return NULL;
-    }
-    
-    return myImage;
-}
-
 - (int) application: (DDCliApplication *) app
    runWithArguments: (NSArray *) arguments;
 {
@@ -133,9 +92,9 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
         }
         
         //THE DETECTING AND CROPPING MAGIC
-        CGImageRef myImage = [self MyCreateCGImageFromFile:_in];
-        NSArray* vertOffsets = [NSArray arrayWithArray:[self detectAlphaTopBottom]];
-        NSArray* horOffsets = [NSArray arrayWithArray:[self detectAlphaLeftRight]];
+        CGImageRef myImage = [p3imglib MyCreateCGImageFromFile:_in];
+        NSArray* vertOffsets = [NSArray arrayWithArray:[self detectAlphaTopBottom:myImage]];
+        NSArray* horOffsets = [NSArray arrayWithArray:[self detectAlphaLeftRight:myImage]];
 
 
         CGRect croppingRect = CGRectMake([[horOffsets objectAtIndex:0] floatValue], 
@@ -158,9 +117,9 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     return EXIT_SUCCESS;
 }
 
--(NSArray*) detectAlphaTopBottom {
+-(NSArray*) detectAlphaTopBottom:(CGImageRef)myImage2 {
     //try opening input image
-    CGImageRef myImage = [self MyCreateCGImageFromFile:_in];
+    CGImageRef myImage = [p3imglib MyCreateCGImageFromFile:_in];
     CFDataRef imageData = CGDataProviderCopyData(CGImageGetDataProvider(myImage)); 
     // Get image width, height. We'll use the entire image.
     int myImageWidth  = CGImageGetWidth(myImage);
@@ -210,9 +169,9 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     return verticalRectVals;
 }
 
+-(NSArray*) detectAlphaLeftRight:(CGImageRef)image2 {
 
--(NSArray*) detectAlphaLeftRight {
-    CGImageRef image = [self MyCreateCGImageFromFile:_in];
+    CGImageRef image = [p3imglib MyCreateCGImageFromFile:_in];
     CGRect imageRect = CGRectMake(0, 0, CGImageGetWidth(image), CGImageGetHeight(image));//draw at origin; translation will take care of movement
     
     NSUInteger width = CGImageGetWidth(image);
@@ -237,9 +196,9 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     
     CGImageRef cgImageRotated = CGBitmapContextCreateImage(context);    
     //FIXME SAVE STEP BETWEEN IS NEEDED BUT WHY?
-    [self CGImageWriteToFile:cgImageRotated withPath:@"/tmp/p3trimalpharotated.png"];
-    CGImageRef cgImageRotated2 = [self MyCreateCGImageFromFile:@"/tmp/p3trimalpharotated.png"];
-    //CFDataRef imageData = CGDataProviderCopyData(CGImageGetDataProvider(cgImageRotated)); 
+    [p3imglib CGImageWriteToFile:cgImageRotated withPath:@"/tmp/p3trimalpharotated.png"];
+    
+    CGImageRef cgImageRotated2 = [p3imglib MyCreateCGImageFromFile:@"/tmp/p3trimalpharotated.png"];
     CFDataRef imageData = CGDataProviderCopyData(CGImageGetDataProvider(cgImageRotated2)); 
     
     // Get image width, height. We'll use the entire image.
@@ -296,20 +255,8 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     
     CGImageRef cgImageCropped = CGImageCreateWithImageInRect(image, cropRect);
 
-    [self CGImageWriteToFile:cgImageCropped withPath:path];
+    [p3imglib CGImageWriteToFile:cgImageCropped withPath:path];
 }
-
--(void) CGImageWriteToFile: (CGImageRef) image withPath:(NSString *) path {
-    CFURLRef url = (CFURLRef)[NSURL fileURLWithPath:path];
-    CGImageDestinationRef destination = CGImageDestinationCreateWithURL(url, kUTTypePNG, 1, NULL);
-    CGImageDestinationAddImage(destination, image, nil);
-    
-    if (!CGImageDestinationFinalize(destination)) {
-        if(_verbosity) NSLog(@"Failed to write image to %@", path);
-    }
-    CFRelease(destination);
-}
-
 
 
 @end

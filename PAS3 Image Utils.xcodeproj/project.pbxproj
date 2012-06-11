@@ -41,6 +41,7 @@
 		3EF2B03F15866ECE00CD035F /* DDCliUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CCE46C0C11C58F00FA06C6 /* DDCliUtil.m */; };
 		3EF2B04015866ED100CD035F /* DDGetoptLongParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CCE46F0C11C58F00FA06C6 /* DDGetoptLongParser.m */; };
 		3EF2B04115866ED300CD035F /* DDCliParseException.m in Sources */ = {isa = PBXBuildFile; fileRef = 55200F520C4A27FD00018A42 /* DDCliParseException.m */; };
+		3EF2B0441586776500CD035F /* p3imglib.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF2AE2715829A7000CD035F /* p3imglib.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,23 +116,23 @@
 			isa = PBXGroup;
 			children = (
 				3EF2AE2815829A7600CD035F /* p3imglib */,
+				3E98B3A1157FA2E7005C56AB /* p3trimalpha */,
+				3EF2AE23158299BE00CD035F /* p3scale */,
+				08FB7795FE84155DC02AAC07 /* resources */,
 				55CCE4680C11C58F00FA06C6 /* libDDCLI */,
-				08FB7795FE84155DC02AAC07 /* Source */,
 				08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
-				55CCEB150C13963F00FA06C6 /* versions.xcconfig */,
 			);
 			name = ddcli;
 			sourceTree = "<group>";
 		};
-		08FB7795FE84155DC02AAC07 /* Source */ = {
+		08FB7795FE84155DC02AAC07 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				3E98B3A1157FA2E7005C56AB /* trimalphaApp */,
-				3EF2AE23158299BE00CD035F /* p3scale */,
+				55CCEB150C13963F00FA06C6 /* versions.xcconfig */,
 				32A70AAB03705E1F00C91783 /* PAS3 Image Utils_Prefix.pch */,
 			);
-			name = Source;
+			name = resources;
 			sourceTree = "<group>";
 		};
 		08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */ = {
@@ -153,14 +154,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3E98B3A1157FA2E7005C56AB /* trimalphaApp */ = {
+		3E98B3A1157FA2E7005C56AB /* p3trimalpha */ = {
 			isa = PBXGroup;
 			children = (
 				3E98B3A2157FA342005C56AB /* trimalpha.m */,
 				3E98B39F157FA2E1005C56AB /* trimalphaApp.h */,
 				3E98B3A0157FA2E1005C56AB /* trimalphaApp.m */,
 			);
-			name = trimalphaApp;
+			name = p3trimalpha;
 			sourceTree = "<group>";
 		};
 		3EF2AE23158299BE00CD035F /* p3scale */ = {
@@ -271,6 +272,7 @@
 				3EF2B04015866ED100CD035F /* DDGetoptLongParser.m in Sources */,
 				3EF2B03F15866ECE00CD035F /* DDCliUtil.m in Sources */,
 				3EF2B03E15866ECB00CD035F /* DDCliApplication.m in Sources */,
+				3EF2B0441586776500CD035F /* p3imglib.m in Sources */,
 				3E98B3B4157FA3F5005C56AB /* trimalpha.m in Sources */,
 				3E98B3B5157FA3F7005C56AB /* trimalphaApp.m in Sources */,
 			);
