@@ -85,7 +85,7 @@
         [self printVersion];
         return EXIT_SUCCESS;
     }
-        NSLog(@"height:%@, width:%@",_height,_width);    
+        NSLog(@"height:%d, width:%d",_height,_width);    
     if (_in && _out)
     {
         ddprintf(@"in: %@, out: %@, verbosity: %d\n", _in, _out, _verbosity);
@@ -97,13 +97,14 @@
             return EX_NOINPUT;
         }
                 
+        NSLog(@"height:%d, width:%d",_height,_width);    
         
-        NSLog(@"height:%@, width:%@",_height,_width);
+
         //THE SCALING MAGIC
         CGImageRef myImage = [p3imglib MyCreateCGImageFromFile:_in];
-        
-        
-        [p3imglib CGImageWriteToFile:myImage withPath:_out];
+        CGImageRef outImage = [p3imglib resizeCGImage:myImage toWidth:_width andHeight:_height];
+
+        [p3imglib CGImageWriteToFile:outImage withPath:_out];
 
             
     }

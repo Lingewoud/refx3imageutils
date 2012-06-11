@@ -14,8 +14,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3EF2AE2915829D0400CD035F"
-               BuildableName = "trimalpha copy"
-               BlueprintName = "p3iscale"
+               BuildableName = "p3iscale"
+               BlueprintName = "p3scale"
                ReferencedContainer = "container:PAS3 Image Utils.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,8 +32,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3EF2AE2915829D0400CD035F"
-            BuildableName = "trimalpha copy"
-            BlueprintName = "p3iscale"
+            BuildableName = "p3iscale"
+            BlueprintName = "p3scale"
             ReferencedContainer = "container:PAS3 Image Utils.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -51,8 +51,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3EF2AE2915829D0400CD035F"
-            BuildableName = "trimalpha copy"
-            BlueprintName = "p3iscale"
+            BuildableName = "p3iscale"
+            BlueprintName = "p3scale"
             ReferencedContainer = "container:PAS3 Image Utils.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -69,8 +69,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3EF2AE2915829D0400CD035F"
-            BuildableName = "trimalpha copy"
-            BlueprintName = "p3iscale"
+            BuildableName = "p3iscale"
+            BlueprintName = "p3scale"
             ReferencedContainer = "container:PAS3 Image Utils.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

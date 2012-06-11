@@ -14,6 +14,7 @@
 			);
 			dependencies = (
 				3E98B3B8157FA469005C56AB /* PBXTargetDependency */,
+				3EF2B04315866EF900CD035F /* PBXTargetDependency */,
 			);
 			name = All;
 			productName = All;
@@ -21,7 +22,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		3E98B3AA157FA3D6005C56AB /* libddcli.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CCE92E0C137F7D00FA06C6 /* libddcli.a */; };
 		3E98B3AB157FA3D6005C56AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
 		3E98B3B4157FA3F5005C56AB /* trimalpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E98B3A2157FA342005C56AB /* trimalpha.m */; };
 		3E98B3B5157FA3F7005C56AB /* trimalphaApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E98B3A0157FA2E1005C56AB /* trimalphaApp.m */; };
@@ -30,29 +30,20 @@
 		3EF2AE3015829D0400CD035F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E98B3C9157FBBC2005C56AB /* Cocoa.framework */; };
 		3EF2AE3115829D0400CD035F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E98B3C1157FB5A0005C56AB /* QuartzCore.framework */; };
 		3EF2AE3215829D0400CD035F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
-		3EF2AE3315829D0400CD035F /* libddcli.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CCE92E0C137F7D00FA06C6 /* libddcli.a */; };
 		3EF2AE3915829D2600CD035F /* p3iscale.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF2AE25158299FB00CD035F /* p3iscale.m */; };
 		3EF2AE3A15829D2800CD035F /* p3iscaleApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF2AE21158299B300CD035F /* p3iscaleApp.m */; };
 		3EF2AE3B15829DDA00CD035F /* p3imglib.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF2AE2715829A7000CD035F /* p3imglib.m */; };
-		55200F530C4A27FD00018A42 /* DDCliParseException.h in Headers */ = {isa = PBXBuildFile; fileRef = 55200F510C4A27FD00018A42 /* DDCliParseException.h */; };
-		55200F540C4A27FD00018A42 /* DDCliParseException.m in Sources */ = {isa = PBXBuildFile; fileRef = 55200F520C4A27FD00018A42 /* DDCliParseException.m */; };
-		55CCE9310C137F8E00FA06C6 /* DDCommandLineInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 55CCE46D0C11C58F00FA06C6 /* DDCommandLineInterface.h */; };
-		55CCE9320C137F8E00FA06C6 /* DDCliApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 55CCE4690C11C58F00FA06C6 /* DDCliApplication.h */; };
-		55CCE9330C137F8E00FA06C6 /* DDCliApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CCE46A0C11C58F00FA06C6 /* DDCliApplication.m */; };
-		55CCE9340C137F8E00FA06C6 /* DDCliUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 55CCE46B0C11C58F00FA06C6 /* DDCliUtil.h */; };
-		55CCE9350C137F8E00FA06C6 /* DDCliUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CCE46C0C11C58F00FA06C6 /* DDCliUtil.m */; };
-		55CCE9370C137F8E00FA06C6 /* DDGetoptLongParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CCE46F0C11C58F00FA06C6 /* DDGetoptLongParser.m */; };
-		55CCEA870C138BE900FA06C6 /* DDGetoptLongParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 55CCEA860C138BE900FA06C6 /* DDGetoptLongParser.h */; };
+		3EF2B03A15866E8200CD035F /* DDCliApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CCE46A0C11C58F00FA06C6 /* DDCliApplication.m */; };
+		3EF2B03B15866E8700CD035F /* DDCliUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CCE46C0C11C58F00FA06C6 /* DDCliUtil.m */; };
+		3EF2B03C15866E8A00CD035F /* DDGetoptLongParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CCE46F0C11C58F00FA06C6 /* DDGetoptLongParser.m */; };
+		3EF2B03D15866E8B00CD035F /* DDCliParseException.m in Sources */ = {isa = PBXBuildFile; fileRef = 55200F520C4A27FD00018A42 /* DDCliParseException.m */; };
+		3EF2B03E15866ECB00CD035F /* DDCliApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CCE46A0C11C58F00FA06C6 /* DDCliApplication.m */; };
+		3EF2B03F15866ECE00CD035F /* DDCliUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CCE46C0C11C58F00FA06C6 /* DDCliUtil.m */; };
+		3EF2B04015866ED100CD035F /* DDGetoptLongParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CCE46F0C11C58F00FA06C6 /* DDGetoptLongParser.m */; };
+		3EF2B04115866ED300CD035F /* DDCliParseException.m in Sources */ = {isa = PBXBuildFile; fileRef = 55200F520C4A27FD00018A42 /* DDCliParseException.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3E98B3A5157FA3D6005C56AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 55CCE92D0C137F7D00FA06C6;
-			remoteInfo = ddcli;
-		};
 		3E98B3B7157FA469005C56AB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
@@ -60,12 +51,12 @@
 			remoteGlobalIDString = 3E98B3A3157FA3D6005C56AB;
 			remoteInfo = trimalpha;
 		};
-		3EF2AE2B15829D0400CD035F /* PBXContainerItemProxy */ = {
+		3EF2B04215866EF900CD035F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 55CCE92D0C137F7D00FA06C6;
-			remoteInfo = ddcli;
+			remoteGlobalIDString = 3EF2AE2915829D0400CD035F;
+			remoteInfo = p3iscale;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -75,7 +66,7 @@
 		3E98B39F157FA2E1005C56AB /* trimalphaApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trimalphaApp.h; sourceTree = "<group>"; };
 		3E98B3A0157FA2E1005C56AB /* trimalphaApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trimalphaApp.m; sourceTree = "<group>"; };
 		3E98B3A2157FA342005C56AB /* trimalpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trimalpha.m; sourceTree = "<group>"; };
-		3E98B3B2157FA3D6005C56AB /* trimalpha */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = trimalpha; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E98B3B2157FA3D6005C56AB /* p3trimalpha */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = p3trimalpha; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E98B3C1157FB5A0005C56AB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3E98B3C9157FBBC2005C56AB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		3EF2AE20158299B300CD035F /* p3iscaleApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = p3iscaleApp.h; sourceTree = "<group>"; };
@@ -83,7 +74,7 @@
 		3EF2AE25158299FB00CD035F /* p3iscale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = p3iscale.m; sourceTree = "<group>"; };
 		3EF2AE2615829A7000CD035F /* p3imglib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = p3imglib.h; sourceTree = "<group>"; };
 		3EF2AE2715829A7000CD035F /* p3imglib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = p3imglib.m; sourceTree = "<group>"; };
-		3EF2AE3715829D0400CD035F /* p3iscale */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = p3iscale; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EF2AE3715829D0400CD035F /* p3scale */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = p3scale; sourceTree = BUILT_PRODUCTS_DIR; };
 		55200F510C4A27FD00018A42 /* DDCliParseException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCliParseException.h; sourceTree = "<group>"; };
 		55200F520C4A27FD00018A42 /* DDCliParseException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCliParseException.m; sourceTree = "<group>"; };
 		55CCE4690C11C58F00FA06C6 /* DDCliApplication.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DDCliApplication.h; sourceTree = "<group>"; };
@@ -92,7 +83,6 @@
 		55CCE46C0C11C58F00FA06C6 /* DDCliUtil.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = DDCliUtil.m; sourceTree = "<group>"; };
 		55CCE46D0C11C58F00FA06C6 /* DDCommandLineInterface.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DDCommandLineInterface.h; sourceTree = "<group>"; };
 		55CCE46F0C11C58F00FA06C6 /* DDGetoptLongParser.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = DDGetoptLongParser.m; sourceTree = "<group>"; };
-		55CCE92E0C137F7D00FA06C6 /* libddcli.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libddcli.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CCEA860C138BE900FA06C6 /* DDGetoptLongParser.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DDGetoptLongParser.h; sourceTree = "<group>"; };
 		55CCEB150C13963F00FA06C6 /* versions.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = versions.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,7 +95,6 @@
 				3E98B3CA157FBBC2005C56AB /* Cocoa.framework in Frameworks */,
 				3E98B3C2157FB5A0005C56AB /* QuartzCore.framework in Frameworks */,
 				3E98B3AB157FA3D6005C56AB /* Foundation.framework in Frameworks */,
-				3E98B3AA157FA3D6005C56AB /* libddcli.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,14 +105,6 @@
 				3EF2AE3015829D0400CD035F /* Cocoa.framework in Frameworks */,
 				3EF2AE3115829D0400CD035F /* QuartzCore.framework in Frameworks */,
 				3EF2AE3215829D0400CD035F /* Foundation.framework in Frameworks */,
-				3EF2AE3315829D0400CD035F /* libddcli.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		55CCE92C0C137F7D00FA06C6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				3E98B3A1157FA2E7005C56AB /* trimalphaApp */,
-				3EF2AE23158299BE00CD035F /* p3iscale */,
+				3EF2AE23158299BE00CD035F /* p3scale */,
 				32A70AAB03705E1F00C91783 /* PAS3 Image Utils_Prefix.pch */,
 			);
 			name = Source;
@@ -166,9 +147,8 @@
 		1AB674ADFE9D54B511CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				55CCE92E0C137F7D00FA06C6 /* libddcli.a */,
-				3E98B3B2157FA3D6005C56AB /* trimalpha */,
-				3EF2AE3715829D0400CD035F /* p3iscale */,
+				3E98B3B2157FA3D6005C56AB /* p3trimalpha */,
+				3EF2AE3715829D0400CD035F /* p3scale */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,14 +163,14 @@
 			name = trimalphaApp;
 			sourceTree = "<group>";
 		};
-		3EF2AE23158299BE00CD035F /* p3iscale */ = {
+		3EF2AE23158299BE00CD035F /* p3scale */ = {
 			isa = PBXGroup;
 			children = (
 				3EF2AE25158299FB00CD035F /* p3iscale.m */,
 				3EF2AE20158299B300CD035F /* p3iscaleApp.h */,
 				3EF2AE21158299B300CD035F /* p3iscaleApp.m */,
 			);
-			name = p3iscale;
+			name = p3scale;
 			sourceTree = "<group>";
 		};
 		3EF2AE2815829A7600CD035F /* p3imglib */ = {
@@ -221,25 +201,10 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		55CCE92A0C137F7D00FA06C6 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				55CCE9310C137F8E00FA06C6 /* DDCommandLineInterface.h in Headers */,
-				55CCE9320C137F8E00FA06C6 /* DDCliApplication.h in Headers */,
-				55CCE9340C137F8E00FA06C6 /* DDCliUtil.h in Headers */,
-				55CCEA870C138BE900FA06C6 /* DDGetoptLongParser.h in Headers */,
-				55200F530C4A27FD00018A42 /* DDCliParseException.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		3E98B3A3157FA3D6005C56AB /* trimalpha */ = {
+		3E98B3A3157FA3D6005C56AB /* p3trimalpha */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3E98B3AF157FA3D6005C56AB /* Build configuration list for PBXNativeTarget "trimalpha" */;
+			buildConfigurationList = 3E98B3AF157FA3D6005C56AB /* Build configuration list for PBXNativeTarget "p3trimalpha" */;
 			buildPhases = (
 				3E98B3A6157FA3D6005C56AB /* Sources */,
 				3E98B3A9157FA3D6005C56AB /* Frameworks */,
@@ -247,17 +212,16 @@
 			buildRules = (
 			);
 			dependencies = (
-				3E98B3A4157FA3D6005C56AB /* PBXTargetDependency */,
 			);
-			name = trimalpha;
+			name = p3trimalpha;
 			productInstallPath = "$(HOME)/bin";
 			productName = ddcli;
-			productReference = 3E98B3B2157FA3D6005C56AB /* trimalpha */;
+			productReference = 3E98B3B2157FA3D6005C56AB /* p3trimalpha */;
 			productType = "com.apple.product-type.tool";
 		};
-		3EF2AE2915829D0400CD035F /* p3iscale */ = {
+		3EF2AE2915829D0400CD035F /* p3scale */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3EF2AE3415829D0400CD035F /* Build configuration list for PBXNativeTarget "p3iscale" */;
+			buildConfigurationList = 3EF2AE3415829D0400CD035F /* Build configuration list for PBXNativeTarget "p3scale" */;
 			buildPhases = (
 				3EF2AE2C15829D0400CD035F /* Sources */,
 				3EF2AE2F15829D0400CD035F /* Frameworks */,
@@ -265,30 +229,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				3EF2AE2A15829D0400CD035F /* PBXTargetDependency */,
 			);
-			name = p3iscale;
+			name = p3scale;
 			productInstallPath = "$(HOME)/bin";
 			productName = ddcli;
-			productReference = 3EF2AE3715829D0400CD035F /* p3iscale */;
+			productReference = 3EF2AE3715829D0400CD035F /* p3scale */;
 			productType = "com.apple.product-type.tool";
-		};
-		55CCE92D0C137F7D00FA06C6 /* ddcli */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 55CCE9480C137FD100FA06C6 /* Build configuration list for PBXNativeTarget "ddcli" */;
-			buildPhases = (
-				55CCE92A0C137F7D00FA06C6 /* Headers */,
-				55CCE92B0C137F7D00FA06C6 /* Sources */,
-				55CCE92C0C137F7D00FA06C6 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ddcli;
-			productName = ddcli;
-			productReference = 55CCE92E0C137F7D00FA06C6 /* libddcli.a */;
-			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -310,9 +256,8 @@
 			projectRoot = "";
 			targets = (
 				55CCEA590C13887100FA06C6 /* All */,
-				3E98B3A3157FA3D6005C56AB /* trimalpha */,
-				3EF2AE2915829D0400CD035F /* p3iscale */,
-				55CCE92D0C137F7D00FA06C6 /* ddcli */,
+				3E98B3A3157FA3D6005C56AB /* p3trimalpha */,
+				3EF2AE2915829D0400CD035F /* p3scale */,
 			);
 		};
 /* End PBXProject section */
@@ -322,6 +267,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EF2B04115866ED300CD035F /* DDCliParseException.m in Sources */,
+				3EF2B04015866ED100CD035F /* DDGetoptLongParser.m in Sources */,
+				3EF2B03F15866ECE00CD035F /* DDCliUtil.m in Sources */,
+				3EF2B03E15866ECB00CD035F /* DDCliApplication.m in Sources */,
 				3E98B3B4157FA3F5005C56AB /* trimalpha.m in Sources */,
 				3E98B3B5157FA3F7005C56AB /* trimalphaApp.m in Sources */,
 			);
@@ -331,40 +280,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EF2B03A15866E8200CD035F /* DDCliApplication.m in Sources */,
+				3EF2B03B15866E8700CD035F /* DDCliUtil.m in Sources */,
+				3EF2B03C15866E8A00CD035F /* DDGetoptLongParser.m in Sources */,
+				3EF2B03D15866E8B00CD035F /* DDCliParseException.m in Sources */,
 				3EF2AE3915829D2600CD035F /* p3iscale.m in Sources */,
 				3EF2AE3A15829D2800CD035F /* p3iscaleApp.m in Sources */,
 				3EF2AE3B15829DDA00CD035F /* p3imglib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		55CCE92B0C137F7D00FA06C6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				55CCE9330C137F8E00FA06C6 /* DDCliApplication.m in Sources */,
-				55CCE9350C137F8E00FA06C6 /* DDCliUtil.m in Sources */,
-				55CCE9370C137F8E00FA06C6 /* DDGetoptLongParser.m in Sources */,
-				55200F540C4A27FD00018A42 /* DDCliParseException.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3E98B3A4157FA3D6005C56AB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 55CCE92D0C137F7D00FA06C6 /* ddcli */;
-			targetProxy = 3E98B3A5157FA3D6005C56AB /* PBXContainerItemProxy */;
-		};
 		3E98B3B8157FA469005C56AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3E98B3A3157FA3D6005C56AB /* trimalpha */;
+			target = 3E98B3A3157FA3D6005C56AB /* p3trimalpha */;
 			targetProxy = 3E98B3B7157FA469005C56AB /* PBXContainerItemProxy */;
 		};
-		3EF2AE2A15829D0400CD035F /* PBXTargetDependency */ = {
+		3EF2B04315866EF900CD035F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 55CCE92D0C137F7D00FA06C6 /* ddcli */;
-			targetProxy = 3EF2AE2B15829D0400CD035F /* PBXContainerItemProxy */;
+			target = 3EF2AE2915829D0400CD035F /* p3scale */;
+			targetProxy = 3EF2B04215866EF900CD035F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -408,7 +345,7 @@
 				GCC_PREFIX_HEADER = "PAS3 Image Utils_Prefix.pch";
 				INSTALL_PATH = "$(HOME)/bin";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = trimalpha;
+				PRODUCT_NAME = p3trimalpha;
 				ZERO_LINK = NO;
 			};
 			name = Debug;
@@ -423,7 +360,7 @@
 				GCC_PREFIX_HEADER = "PAS3 Image Utils_Prefix.pch";
 				INSTALL_PATH = "$(HOME)/bin";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = trimalpha;
+				PRODUCT_NAME = p3trimalpha;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -441,7 +378,7 @@
 				GCC_PREFIX_HEADER = "PAS3 Image Utils_Prefix.pch";
 				INSTALL_PATH = "$(HOME)/bin";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = p3iscale;
+				PRODUCT_NAME = p3scale;
 				ZERO_LINK = NO;
 			};
 			name = Debug;
@@ -456,40 +393,7 @@
 				GCC_PREFIX_HEADER = "PAS3 Image Utils_Prefix.pch";
 				INSTALL_PATH = "$(HOME)/bin";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = p3iscale;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		55CCE9490C137FD100FA06C6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				BUILD_VARIANTS = normal;
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				INSTALL_PATH = /usr/local/lib;
-				PRODUCT_NAME = ddcli;
-				VALID_ARCHS = x86_64;
-				ZERO_LINK = NO;
-			};
-			name = Debug;
-		};
-		55CCE94A0C137FD100FA06C6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				BUILD_VARIANTS = normal;
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = G5;
-				INSTALL_PATH = /usr/local/lib;
-				PRODUCT_NAME = ddcli;
+				PRODUCT_NAME = p3scale;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -527,7 +431,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3E98B3AF157FA3D6005C56AB /* Build configuration list for PBXNativeTarget "trimalpha" */ = {
+		3E98B3AF157FA3D6005C56AB /* Build configuration list for PBXNativeTarget "p3trimalpha" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3E98B3B0157FA3D6005C56AB /* Debug */,
@@ -536,20 +440,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3EF2AE3415829D0400CD035F /* Build configuration list for PBXNativeTarget "p3iscale" */ = {
+		3EF2AE3415829D0400CD035F /* Build configuration list for PBXNativeTarget "p3scale" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EF2AE3515829D0400CD035F /* Debug */,
 				3EF2AE3615829D0400CD035F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		55CCE9480C137FD100FA06C6 /* Build configuration list for PBXNativeTarget "ddcli" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				55CCE9490C137FD100FA06C6 /* Debug */,
-				55CCE94A0C137FD100FA06C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

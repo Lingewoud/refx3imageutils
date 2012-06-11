@@ -12,5 +12,5 @@
 
 + (CGImageRef) MyCreateCGImageFromFile: (NSString *) path;
 + (void) CGImageWriteToFile: (CGImageRef) image withPath:(NSString *) path;
-
++ (CGImageRef)resizeCGImage:(CGImageRef)image toWidth:(int)width andHeight:(int)height;
 @end

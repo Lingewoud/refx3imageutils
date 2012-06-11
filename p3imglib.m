@@ -88,14 +88,17 @@
  */
 
 + (CGImageRef)resizeCGImage:(CGImageRef)image toWidth:(int)width andHeight:(int)height {
-    // create context, keeping original image properties
-    CGColorSpaceRef colorspace = CGImageGetColorSpace(image);
-    CGContextRef context = CGBitmapContextCreate(NULL, width, height,
-                                                 CGImageGetBitsPerComponent(image),
-                                                 CGImageGetBytesPerRow(image),
-                                                 colorspace,
-                                                 CGImageGetAlphaInfo(image));
-    CGColorSpaceRelease(colorspace);
+
+    CGColorSpaceRef colorSpace = CGImageGetColorSpace(image);
+
+    CGContextRef context = CGBitmapContextCreate(NULL,
+                                                 width,
+                                                 height, 
+                                                 CGImageGetBitsPerComponent(image), 
+                                                 CGImageGetBytesPerRow(image), 
+                                                 colorSpace, 
+                                                 kCGImageAlphaPremultipliedLast);
+    CGColorSpaceRelease(colorSpace);
     
     if(context == NULL)
         return nil;
@@ -108,6 +111,7 @@
     
     return imgRef;
 }
+
 
 /*+(CGImageRef) epsToPng:
 source,dest)
