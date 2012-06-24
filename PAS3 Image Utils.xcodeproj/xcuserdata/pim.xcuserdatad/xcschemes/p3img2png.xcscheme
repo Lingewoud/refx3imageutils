@@ -13,9 +13,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3E98B3A3157FA3D6005C56AB"
-               BuildableName = "p3trimalpha"
-               BlueprintName = "p3trimalpha"
+               BlueprintIdentifier = "3E99805C1587EFDD00FACDC7"
+               BuildableName = "p3img2png"
+               BlueprintName = "p3img2png"
                ReferencedContainer = "container:PAS3 Image Utils.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -31,9 +31,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3E98B3A3157FA3D6005C56AB"
-            BuildableName = "p3trimalpha"
-            BlueprintName = "p3trimalpha"
+            BlueprintIdentifier = "3E99805C1587EFDD00FACDC7"
+            BuildableName = "p3img2png"
+            BlueprintName = "p3img2png"
             ReferencedContainer = "container:PAS3 Image Utils.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -50,9 +50,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3E98B3A3157FA3D6005C56AB"
-            BuildableName = "p3trimalpha"
-            BlueprintName = "p3trimalpha"
+            BlueprintIdentifier = "3E99805C1587EFDD00FACDC7"
+            BuildableName = "p3img2png"
+            BlueprintName = "p3img2png"
             ReferencedContainer = "container:PAS3 Image Utils.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -68,9 +68,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3E98B3A3157FA3D6005C56AB"
-            BuildableName = "p3trimalpha"
-            BlueprintName = "p3trimalpha"
+            BlueprintIdentifier = "3E99805C1587EFDD00FACDC7"
+            BuildableName = "p3img2png"
+            BlueprintName = "p3img2png"
             ReferencedContainer = "container:PAS3 Image Utils.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

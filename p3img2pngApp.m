@@ -7,9 +7,9 @@
 //
 
 #import "p3imglib.h"
-#import "p3iscaleApp.h"
+#import "p3img2pngApp.h"
 
-@implementation p3iscaleApp
+@implementation p3img2pngApp
 - (id) init;
 {
     self = [super init];
@@ -85,7 +85,7 @@
         [self printVersion];
         return EXIT_SUCCESS;
     }
-        //NSLog(@"height:%d, width:%d",_height,_width);    
+    //NSLog(@"height:%d, width:%d",_height,_width);    
     if (_in && _out)
     {
         //ddprintf(@"in: %@, out: %@, verbosity: %d\n", _in, _out, _verbosity);
@@ -96,11 +96,11 @@
             ddfprintf(stderr, @"%@: %@: No such file\n", DDCliApp, _in);
             return EX_NOINPUT;
         }
-                
+        
         //NSLog(@"height:%d, width:%d",_height,_width);    
         
         CGImageRef myImage = [p3imglib MyCreateCGImageFromFile:_in];
-
+        
         int myImageWidth  = CGImageGetWidth(myImage);
         int myImageHeight = CGImageGetHeight(myImage);
         
@@ -120,10 +120,10 @@
         
         //THE SCALING MAGIC
         CGImageRef outImage = [p3imglib resizeCGImage:myImage toWidth:_width andHeight:_height];
-
+        
         [p3imglib CGImageWriteToFile:outImage withPath:_out];
-
-            
+        
+        
     }
     else {
         ddfprintf(stderr, @"%@: input file and or output file is missing\n", DDCliApp);

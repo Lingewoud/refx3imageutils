@@ -13,9 +13,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3E98B3A3157FA3D6005C56AB"
-               BuildableName = "p3trimalpha"
-               BlueprintName = "p3trimalpha"
+               BlueprintIdentifier = "3E9E1DAF1587D77400D0222E"
+               BuildableName = "copyBinsToREFx"
+               BlueprintName = "copyBinsToREFx"
                ReferencedContainer = "container:PAS3 Image Utils.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,15 +28,6 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3E98B3A3157FA3D6005C56AB"
-            BuildableName = "p3trimalpha"
-            BlueprintName = "p3trimalpha"
-            ReferencedContainer = "container:PAS3 Image Utils.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -47,15 +38,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3E98B3A3157FA3D6005C56AB"
-            BuildableName = "p3trimalpha"
-            BlueprintName = "p3trimalpha"
-            ReferencedContainer = "container:PAS3 Image Utils.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -65,15 +47,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3E98B3A3157FA3D6005C56AB"
-            BuildableName = "p3trimalpha"
-            BlueprintName = "p3trimalpha"
-            ReferencedContainer = "container:PAS3 Image Utils.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

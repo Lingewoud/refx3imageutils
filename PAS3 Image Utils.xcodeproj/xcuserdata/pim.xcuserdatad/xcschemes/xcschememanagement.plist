@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>copyBinsToREFx.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>ddcli.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
+		</dict>
+		<key>p3img2png.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>p3iscale.xcscheme</key>
 		<dict>
@@ -28,6 +38,16 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>3E98B3A3157FA3D6005C56AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3E99805C1587EFDD00FACDC7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3E9E1DAF1587D77400D0222E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

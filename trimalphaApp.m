@@ -139,12 +139,12 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
         {
             [notAlphaRows addObject:newRow];
             
-            if(_verbosity) NSLog(@"this is NOT a transparent pixel");
+            //if(_verbosity) NSLog(@"this is NOT a transparent pixel");
             
         }
         else
         {            
-            if(_verbosity) NSLog(@"transparent pixel!");                        
+            //if(_verbosity) NSLog(@"transparent pixel!");                        
         }
     }
     
@@ -163,7 +163,7 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     
     [verticalRectVals addObject:[NSNumber numberWithInt:topOffset]];
     [verticalRectVals addObject:[NSNumber numberWithInt:height]];
-    if(_verbosity) NSLog(@"nonAlphaRows %@", notAlphaRows);
+    //if(_verbosity) NSLog(@"nonAlphaRows %@", notAlphaRows);
     if(_verbosity) NSLog(@"verticalRectVals %@", verticalRectVals);
     
     return verticalRectVals;
@@ -178,15 +178,17 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     NSUInteger height = CGImageGetHeight(image);
     CGFloat targetWidth = height;
     CGFloat targetHeight = width;
-    
+    //CGFloat targetWidth = width;
+    //CGFloat targetHeight = height;    
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef context = CGBitmapContextCreate(NULL,
                                                  targetWidth,
                                                  targetHeight, 
                                                  CGImageGetBitsPerComponent(image), 
-                                                 CGImageGetBytesPerRow(image), 
+                                                 CGImageGetBytesPerRow(image)*2, 
                                                  colorSpace, 
                                                  kCGImageAlphaPremultipliedLast);
+    
     
     CGContextRotateCTM(context, DegreesToRadians(-90));
     CGContextTranslateCTM(context,-targetHeight, 0);
@@ -205,7 +207,7 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     int myImageWidth  = CGImageGetWidth(cgImageRotated2);
     int myImageHeight = CGImageGetHeight(cgImageRotated2);
     
-    NSLog(@"rotated sizes, w:%d, h:%d",myImageWidth, myImageHeight);
+    //NSLog(@"rotated sizes, w:%d, h:%d",myImageWidth, myImageHeight);
     
     NSNumber *newRow = 0;
     
@@ -220,12 +222,12 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
         {
             [notAlphaCols addObject:newRow];
 
-            if(_verbosity) NSLog(@"this is NOT a transparent pixel:%i %@",j,newRow);
+            //if(_verbosity) NSLog(@"this is NOT a transparent pixel:%i %@",j,newRow);
             
         }
         else
         {            
-             if(_verbosity) NSLog(@"transparent pixel!%i %@",j,newRow);                        
+             //if(_verbosity) NSLog(@"transparent pixel!%i %@",j,newRow);                        
         }
     }
     
@@ -245,8 +247,8 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     
     [horizontalRectVals addObject:[NSNumber numberWithInt:topOffset]];
     [horizontalRectVals addObject:[NSNumber numberWithInt:newheight]];
-    if(_verbosity) NSLog(@"nonAlphaCols %@", notAlphaCols);    
-    NSLog(@"horizontalRectVals %@", horizontalRectVals);
+    //if(_verbosity) NSLog(@"nonAlphaCols %@", notAlphaCols);    
+    //NSLog(@"horizontalRectVals %@", horizontalRectVals);
     
     return horizontalRectVals;
 }
