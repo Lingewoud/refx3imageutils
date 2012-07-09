@@ -7,9 +7,9 @@
 //
 
 #import "p3imglib.h"
-#import "p3img2pngApp.h"
+#import "p3convfiletypeApp.h"
 
-@implementation p3img2pngApp
+@implementation p3convfiletypeApp
 - (id) init;
 {
     self = [super init];
@@ -39,8 +39,7 @@
     printf("\n"
            "  -i, --in <FILENAME>           Input image filename to trim alpha from\n"
            "  -o, --out <FILENAME>          Output image filename\n"
-           "  -w, --width <INT>             New width in pixels \n"
-           "  -h, --height <INT>            New height in pixels, use 0 to auto calculate new height based on aspect ratio \n"
+           "  -t, --type <png/jpg/tif>      Output type: png/jpg/tif, default png\n"
            "  -v, --verbose                 Increase verbosity\n"
            "      --version                 Display version and exit\n"
            "  -h, --help                    Display this help and exit\n"
@@ -61,8 +60,7 @@
         // Long         Short   Argument options
         {@"in",        'i',    DDGetoptRequiredArgument},
         {@"out",       'o',    DDGetoptRequiredArgument},
-        {@"height",    'h',    DDGetoptRequiredArgument},
-        {@"width",     'w',    DDGetoptRequiredArgument},
+        {@"type",      't',    DDGetoptRequiredArgument},
         {@"verbose",   'v',    DDGetoptNoArgument},
         {@"version",    0,      DDGetoptNoArgument},
         //{@"help",       'h',    DDGetoptNoArgument},
@@ -85,6 +83,20 @@
         [self printVersion];
         return EXIT_SUCCESS;
     }
+    
+   ///NSLog("type: %@",_type);
+    
+    int repType;
+    if ([_type isEqualToString: @"jpg"]){
+        repType = NSJPEGFileType;
+    }
+    else if ([_type isEqualToString: @"tif"]){
+        repType = NSTIFFFileType;
+    }
+    else {
+        repType = NSPNGFileType;
+    }
+    
     //NSLog(@"height:%d, width:%d",_height,_width);    
     if (_in && _out)
     {
@@ -97,33 +109,18 @@
             return EX_NOINPUT;
         }
         
-        //NSLog(@"height:%d, width:%d",_height,_width);    
+       
+        //THE CONVERTING MAGIC        
+        NSImage *psimage = [[NSImage alloc] initWithContentsOfFile:_in];
         
-        CGImageRef myImage = [p3imglib MyCreateCGImageFromFile:_in];
-        
-        int myImageWidth  = CGImageGetWidth(myImage);
-        int myImageHeight = CGImageGetHeight(myImage);
-        
-        if(myImageWidth<=_width || myImageHeight <= _height){
-            ddfprintf(stderr, @"%@: w%d h%d: destination size larger then original\n", DDCliApp, _width,_height);
-            return 1;
-            return EX_NOINPUT;        
+        if (![psimage isValid]) {
+            NSLog(@"Invalid Image");
+            return EX_NOINPUT;
         }
-        
-        if(_height==0){
-            float tmpH = (float) _width / (float) myImageWidth * (float) myImageHeight;
-            _height = (int) tmpH;
-            //NSLog(@"new calculated height %d/%d =  %f:%d",_width, myImageWidth, tmpH, _height);
-        }
-        
-        
-        
-        //THE SCALING MAGIC
-        CGImageRef outImage = [p3imglib resizeCGImage:myImage toWidth:_width andHeight:_height];
-        
-        [p3imglib CGImageWriteToFile:outImage withPath:_out];
-        
-        
+
+        NSBitmapImageRep *bits = [[NSBitmapImageRep alloc] initWithData:[psimage TIFFRepresentation]];
+		NSData *data = [bits representationUsingType:repType properties: nil];
+		[data writeToFile:_out atomically:NO];
     }
     else {
         ddfprintf(stderr, @"%@: input file and or output file is missing\n", DDCliApp);

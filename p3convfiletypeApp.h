@@ -9,13 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "DDCommandLineInterface.h"
 
-@interface p3img2pngApp  : NSObject <DDCliApplicationDelegate>
+@interface p3convfiletypeApp  : NSObject <DDCliApplicationDelegate>
 {
     NSString * _in;
     NSString * _out;
+    NSString * _type;
     int _verbosity;
-    int _width;
-    int _height;
     BOOL _version;
     BOOL _help;
 }

@@ -46,9 +46,9 @@
 		3E9980661587EFDD00FACDC7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E98B3C9157FBBC2005C56AB /* Cocoa.framework */; };
 		3E9980671587EFDD00FACDC7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E98B3C1157FB5A0005C56AB /* QuartzCore.framework */; };
 		3E9980681587EFDD00FACDC7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
-		3E99806F1587F00900FACDC7 /* p3img2pngApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9980581587EED900FACDC7 /* p3img2pngApp.m */; };
-		3E9980701587F00E00FACDC7 /* p3img2png.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E99805B1587EF0600FACDC7 /* p3img2png.m */; };
-		3E9980711587F03100FACDC7 /* p3img2png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E99806C1587EFDD00FACDC7 /* p3img2png */; };
+		3E99806F1587F00900FACDC7 /* p3convfiletypeApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9980581587EED900FACDC7 /* p3convfiletypeApp.m */; };
+		3E9980701587F00E00FACDC7 /* p3convfiletype.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E99805B1587EF0600FACDC7 /* p3convfiletype.m */; };
+		3E9980711587F03100FACDC7 /* p3convfiletype in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E99806C1587EFDD00FACDC7 /* p3convfiletype */; };
 		3E9E1DB51587D79600D0222E /* p3trimalpha in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3E98B3B2157FA3D6005C56AB /* p3trimalpha */; };
 		3E9E1DB61587D79800D0222E /* p3scale in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3EF2AE3715829D0400CD035F /* p3scale */; };
 		3EF2AE3015829D0400CD035F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E98B3C9157FBBC2005C56AB /* Cocoa.framework */; };
@@ -89,12 +89,12 @@
 		3E9E1DB41587D79100D0222E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /Users/pim/Sites/Github/REFx3/p3imgutils;
+			dstPath = /Users/pim/Sourcecode/github/PAS3/REFx3/p3imgutils;
 			dstSubfolderSpec = 0;
 			files = (
 				3E9E1DB51587D79600D0222E /* p3trimalpha in CopyFiles */,
 				3E9E1DB61587D79800D0222E /* p3scale in CopyFiles */,
-				3E9980711587F03100FACDC7 /* p3img2png in CopyFiles */,
+				3E9980711587F03100FACDC7 /* p3convfiletype in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,10 +109,10 @@
 		3E98B3B2157FA3D6005C56AB /* p3trimalpha */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = p3trimalpha; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E98B3C1157FB5A0005C56AB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3E98B3C9157FBBC2005C56AB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		3E9980571587EED900FACDC7 /* p3img2pngApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = p3img2pngApp.h; sourceTree = "<group>"; };
-		3E9980581587EED900FACDC7 /* p3img2pngApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = p3img2pngApp.m; sourceTree = "<group>"; };
-		3E99805B1587EF0600FACDC7 /* p3img2png.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = p3img2png.m; sourceTree = "<group>"; };
-		3E99806C1587EFDD00FACDC7 /* p3img2png */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = p3img2png; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E9980571587EED900FACDC7 /* p3convfiletypeApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = p3convfiletypeApp.h; sourceTree = "<group>"; };
+		3E9980581587EED900FACDC7 /* p3convfiletypeApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = p3convfiletypeApp.m; sourceTree = "<group>"; };
+		3E99805B1587EF0600FACDC7 /* p3convfiletype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = p3convfiletype.m; sourceTree = "<group>"; };
+		3E99806C1587EFDD00FACDC7 /* p3convfiletype */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = p3convfiletype; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF2AE20158299B300CD035F /* p3iscaleApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = p3iscaleApp.h; sourceTree = "<group>"; };
 		3EF2AE21158299B300CD035F /* p3iscaleApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = p3iscaleApp.m; sourceTree = "<group>"; };
 		3EF2AE25158299FB00CD035F /* p3iscale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = p3iscale.m; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 			children = (
 				3E98B3A1157FA2E7005C56AB /* p3trimalpha */,
 				3EF2AE23158299BE00CD035F /* p3scale */,
-				3E99805A1587EEDF00FACDC7 /* p3img2png */,
+				3E99805A1587EEDF00FACDC7 /* p3convfiletype */,
 				3EF2AE2815829A7600CD035F /* p3imglib */,
 				08FB7795FE84155DC02AAC07 /* resources */,
 				55CCE4680C11C58F00FA06C6 /* libDDCLI */,
@@ -204,7 +204,7 @@
 			children = (
 				3E98B3B2157FA3D6005C56AB /* p3trimalpha */,
 				3EF2AE3715829D0400CD035F /* p3scale */,
-				3E99806C1587EFDD00FACDC7 /* p3img2png */,
+				3E99806C1587EFDD00FACDC7 /* p3convfiletype */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,14 +219,14 @@
 			name = p3trimalpha;
 			sourceTree = "<group>";
 		};
-		3E99805A1587EEDF00FACDC7 /* p3img2png */ = {
+		3E99805A1587EEDF00FACDC7 /* p3convfiletype */ = {
 			isa = PBXGroup;
 			children = (
-				3E9980571587EED900FACDC7 /* p3img2pngApp.h */,
-				3E9980581587EED900FACDC7 /* p3img2pngApp.m */,
-				3E99805B1587EF0600FACDC7 /* p3img2png.m */,
+				3E9980571587EED900FACDC7 /* p3convfiletypeApp.h */,
+				3E9980581587EED900FACDC7 /* p3convfiletypeApp.m */,
+				3E99805B1587EF0600FACDC7 /* p3convfiletype.m */,
 			);
-			name = p3img2png;
+			name = p3convfiletype;
 			sourceTree = "<group>";
 		};
 		3EF2AE23158299BE00CD035F /* p3scale */ = {
@@ -285,9 +285,9 @@
 			productReference = 3E98B3B2157FA3D6005C56AB /* p3trimalpha */;
 			productType = "com.apple.product-type.tool";
 		};
-		3E99805C1587EFDD00FACDC7 /* p3img2png */ = {
+		3E99805C1587EFDD00FACDC7 /* p3convfiletype */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3E9980691587EFDD00FACDC7 /* Build configuration list for PBXNativeTarget "p3img2png" */;
+			buildConfigurationList = 3E9980691587EFDD00FACDC7 /* Build configuration list for PBXNativeTarget "p3convfiletype" */;
 			buildPhases = (
 				3E99805D1587EFDD00FACDC7 /* Sources */,
 				3E9980651587EFDD00FACDC7 /* Frameworks */,
@@ -296,10 +296,10 @@
 			);
 			dependencies = (
 			);
-			name = p3img2png;
+			name = p3convfiletype;
 			productInstallPath = "$(HOME)/bin";
 			productName = ddcli;
-			productReference = 3E99806C1587EFDD00FACDC7 /* p3img2png */;
+			productReference = 3E99806C1587EFDD00FACDC7 /* p3convfiletype */;
 			productType = "com.apple.product-type.tool";
 		};
 		3EF2AE2915829D0400CD035F /* p3scale */ = {
@@ -341,7 +341,7 @@
 				55CCEA590C13887100FA06C6 /* All */,
 				3E98B3A3157FA3D6005C56AB /* p3trimalpha */,
 				3EF2AE2915829D0400CD035F /* p3scale */,
-				3E99805C1587EFDD00FACDC7 /* p3img2png */,
+				3E99805C1587EFDD00FACDC7 /* p3convfiletype */,
 				3E9E1DAF1587D77400D0222E /* copyBinsToREFx */,
 			);
 		};
@@ -370,8 +370,8 @@
 				3E99805F1587EFDD00FACDC7 /* DDCliUtil.m in Sources */,
 				3E9980601587EFDD00FACDC7 /* DDGetoptLongParser.m in Sources */,
 				3E9980611587EFDD00FACDC7 /* DDCliParseException.m in Sources */,
-				3E99806F1587F00900FACDC7 /* p3img2pngApp.m in Sources */,
-				3E9980701587F00E00FACDC7 /* p3img2png.m in Sources */,
+				3E99806F1587F00900FACDC7 /* p3convfiletypeApp.m in Sources */,
+				3E9980701587F00E00FACDC7 /* p3convfiletype.m in Sources */,
 				3E9980641587EFDD00FACDC7 /* p3imglib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,7 +478,7 @@
 				GCC_PREFIX_HEADER = "PAS3 Image Utils_Prefix.pch";
 				INSTALL_PATH = "$(HOME)/bin";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = p3img2png;
+				PRODUCT_NAME = p3convfiletype;
 				ZERO_LINK = NO;
 			};
 			name = Debug;
@@ -493,7 +493,7 @@
 				GCC_PREFIX_HEADER = "PAS3 Image Utils_Prefix.pch";
 				INSTALL_PATH = "$(HOME)/bin";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = p3img2png;
+				PRODUCT_NAME = p3convfiletype;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -587,7 +587,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3E9980691587EFDD00FACDC7 /* Build configuration list for PBXNativeTarget "p3img2png" */ = {
+		3E9980691587EFDD00FACDC7 /* Build configuration list for PBXNativeTarget "p3convfiletype" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3E99806A1587EFDD00FACDC7 /* Debug */,
